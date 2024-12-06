@@ -11,13 +11,14 @@ nav{
     position : fixed;
     top: 20px;
     right: 20px;
+
 }
 #chk-bouton{
     display: none;
 }
 #chk-bouton:checked + .entete__navigation{
     display: flex;
-    transform: translateX(0);
+    transform: translateX(0);    
 }
 .entete__navigation {
     transform: translateX(200px);
@@ -37,6 +38,30 @@ nav{
 
  
 }
+.section__article{
+
+  }
+  
+  .article__figure{
+    flex: 1 1 100px;
+    transform: scale(.9); 
+    filter: grayscale(1);
+    transition: transform .25s, filter .25s;
+  
+  }
+  
+  .article__figure:hover{
+    transform: scale(1);
+    filter: grayscale(0);
+  }
+  .article__figure img{
+    width: 100%;
+   
+  }
+  .article__texte{
+   flex: 1 1 300px;
+   line-height: 40px;
+  }
 .entete__navigation a{
     text-decoration: none; 
     color: #9c4040;
@@ -45,8 +70,23 @@ nav{
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(139, 189, 255);
+    text-align: left;
+}
+.article{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border : 1px solid #aaa;
+    padding : 20px;
+  }
+
+.article figcaption{
     text-align: center;
 }
+  
+  .article:nth-of-type(odd) figure{
+    order: 9;
+  }
 
 .hero{
     display: flex;
@@ -75,7 +115,6 @@ h1{
 
 .boite__nav{
     background-color:  rgba(0, 0, 0, 0.1);
-    position: fixed;
 }
 
 .hero__nav a:hover{
@@ -126,7 +165,8 @@ h1{
 }
 
 .hero__logo img{
-    width: 450px;
+    width: 100%;
+    flex: 0 0 450px;
     flex-grow: wrap;
 }
 
